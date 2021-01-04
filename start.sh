@@ -22,5 +22,7 @@ export LD_LIBRARY_PATH=${GAME_DIR}/7DaysToDieServer_Data/Plugins/x86_64:$LD_LIBR
 mkdir -p /steam/.local/share/7DaysToDie/
 ln -nsf /config/Saves /steam/.local/share/7DaysToDie/Saves
 
+# Some mods get pissed if its not in the right dir.
+cd ${GAME_DIR}
 echo "Starting game with arguments '${START_ARGS}'"
 ${GAME_DIR}/7DaysToDieServer.x86_64 ${START_ARGS} -configfile=/config/serverconfig.xml
